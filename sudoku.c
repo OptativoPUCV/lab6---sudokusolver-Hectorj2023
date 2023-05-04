@@ -126,9 +126,8 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  int n;
   List* stack=createList();
-  pushFront(stack,n);
+  pushFront(stack,initial);
   
   while(!is_empty(stack)){
     Node* current=first(stack);
