@@ -249,3 +249,14 @@ sudoku.c:131:3: error: ‘n’ is used uninitialized [-Werror=uninitialized]
 cc1: all warnings being treated as errors
 Compilation failed
 74432cf
+Thu 04 May 2023 11:09:40 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:131:19: error: ‘n’ undeclared (first use in this function)
+  131 |   pushFront(stack,n);
+      |                   ^
+sudoku.c:131:19: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+767722e
