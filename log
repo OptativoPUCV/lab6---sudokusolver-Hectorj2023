@@ -260,3 +260,24 @@ sudoku.c:131:19: error: ‘n’ undeclared (first use in this function)
 sudoku.c:131:19: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 767722e
+Thu 04 May 2023 11:10:34 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:131:19: error: passing argument 2 of ‘pushFront’ makes pointer from integer without a cast [-Werror=int-conversion]
+  131 |   pushFront(stack,n);
+      |                   ^
+      |                   |
+      |                   int
+In file included from test.c:4:
+list.h:22:34: note: expected ‘void *’ but argument is of type ‘int’
+   22 | void pushFront(List* list, void* data);
+      |                            ~~~~~~^~~~
+In file included from test.c:5:
+sudoku.c:131:3: error: ‘n’ is used uninitialized [-Werror=uninitialized]
+  131 |   pushFront(stack,n);
+      |   ^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b1c13c3
