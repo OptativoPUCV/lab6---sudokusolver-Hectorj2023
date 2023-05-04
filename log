@@ -151,3 +151,31 @@ test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 875dd8b
+Thu 04 May 2023 02:28:50 AM UTC: 
+ sudoku.c | 48 ++++++++++++++++++++++--------------------------
+ 1 file changed, 22 insertions(+), 26 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:130:13: error: ‘n’ undeclared (first use in this function)
+  130 |     push(S, n);
+      |             ^
+sudoku.c:130:13: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:132:12: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  132 |     while(!isEmpty(S)){
+      |            ^~~~~~~
+      |            is_empty
+sudoku.c:138:13: error: implicit declaration of function ‘freeStack’; did you mean ‘createStack’? [-Werror=implicit-function-declaration]
+  138 |             freeStack(S);
+      |             ^~~~~~~~~
+      |             createStack
+sudoku.c:150:9: error: implicit declaration of function ‘freeNode’; did you mean ‘createNode’? [-Werror=implicit-function-declaration]
+  150 |         freeNode(current);
+      |         ^~~~~~~~
+      |         createNode
+sudoku.c:151:9: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  151 |         freeList(adj_nodes);
+      |         ^~~~~~~~
+      |         createList
+cc1: all warnings being treated as errors
+Compilation failed
+4aee645
