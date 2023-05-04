@@ -44,8 +44,42 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+ int i, j, k, p;
+    int fila[10] = {0};  
+    int columna[10] = {0};  
+    int matrices[10] = {0}; 
+    
 
-    return 1;
+    for (i = 0; i < 9; i++) {
+        memset(fila, 0, sizeof(fila));  
+        for (j = 0; j < 9; j++) {
+            if (n->sudo[i][j] == 0) continue;  
+            if (fila[n->sudo[i][j]]) return 0; 
+            fila[n->sudo[i][j]] = 1;  
+        }
+    }
+    
+    for (j = 0; j < 9; j++) {
+        memset(columna, 0, sizeof(columna));  
+        for (i = 0; i < 9; i++) {
+            if (n->sudo[i][j] == 0) continue;  
+            if (columna[n->sudo[i][j]]) return 0;  
+            columna[n->sudo[i][j]] = 1; 
+        }
+    }
+    
+    for (k = 0; k < 9; k++) {
+        memset(matrices, 0, sizeof(matrices));  
+        for (p = 0; p < 9; p++) {
+            int i = 3*(k/3) + (p/3);
+            int j = 3*(k%3) + (p%3);
+            if (n->sudo[i][j] == 0) continue;  
+            if (matrices[n->sudo[i][j]]) return 0; 
+            matrices[n->sudo[i][j]] = 1;  
+        }
+    }
+    
+    return 1;  
 }
 
 
