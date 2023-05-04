@@ -69,3 +69,40 @@ Thu 04 May 2023 02:22:16 AM UTC:
  tests:  7|1
 total_score: 55/70
 6bfd25b
+Thu 04 May 2023 02:26:57 AM UTC: 
+ sudoku.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:129:5: error: ‘stack’ undeclared (first use in this function); did you mean ‘Stack’?
+  129 |     stack<Node*> S;
+      |     ^~~~~
+      |     Stack
+sudoku.c:129:5: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:129:11: error: expected expression before ‘Node’
+  129 |     stack<Node*> S;
+      |           ^~~~
+sudoku.c:130:5: error: ‘S’ undeclared (first use in this function)
+  130 |     S.push(n);
+      |     ^
+sudoku.c:130:12: error: ‘n’ undeclared (first use in this function)
+  130 |     S.push(n);
+      |            ^
+sudoku.c:138:13: error: implicit declaration of function ‘isFinalState’ [-Werror=implicit-function-declaration]
+  138 |         if (isFinalState(curr)) {
+      |             ^~~~~~~~~~~~
+sudoku.c:142:9: error: ‘vector’ undeclared (first use in this function)
+  142 |         vector<Node*> neighbors = getNeighbors(curr);
+      |         ^~~~~~
+sudoku.c:142:16: error: expected expression before ‘Node’
+  142 |         vector<Node*> neighbors = getNeighbors(curr);
+      |                ^~~~
+sudoku.c:143:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+  143 |         for (Node* neighbor : neighbors) {
+      |                             ^
+sudoku.c:144:20: error: ‘neighbor’ undeclared (first use in this function)
+  144 |             S.push(neighbor);
+      |                    ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4f5969d

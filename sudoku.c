@@ -126,7 +126,27 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  return NULL;
+    stack<Node*> S;
+    S.push(n);
+    *cont = 0;
+    
+    while (!S.empty()) {
+        Node* curr = S.top();
+        S.pop();
+        (*cont)++;
+        
+        if (isFinalState(curr)) {
+            return curr;
+        }
+        
+        vector<Node*> neighbors = getNeighbors(curr);
+        for (Node* neighbor : neighbors) {
+            S.push(neighbor);
+        }
+    }
+    
+    // Si no se encuentra una solución, retorna NULL
+    return NULL;
 }
 
 
