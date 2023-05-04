@@ -179,3 +179,26 @@ sudoku.c:151:9: error: implicit declaration of function ‘freeList’; did you 
 cc1: all warnings being treated as errors
 Compilation failed
 4aee645
+Thu 04 May 2023 02:30:23 AM UTC: 
+ sudoku.c | 30 +++++++++++-------------------
+ 1 file changed, 11 insertions(+), 19 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:131:12: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  131 |     while(!isEmpty(S)){
+      |            ^~~~~~~
+      |            is_empty
+sudoku.c:132:20: error: void value not ignored as it ought to be
+  132 |         Node* node=pop(S);
+      |                    ^~~
+sudoku.c:135:13: error: implicit declaration of function ‘clear’; did you mean ‘clean’? [-Werror=implicit-function-declaration]
+  135 |             clear(S);
+      |             ^~~~~
+      |             clean
+sudoku.c:144:9: error: implicit declaration of function ‘clearList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  144 |         clearList(adj);
+      |         ^~~~~~~~~
+      |         createList
+cc1: all warnings being treated as errors
+Compilation failed
+be5a3a7
