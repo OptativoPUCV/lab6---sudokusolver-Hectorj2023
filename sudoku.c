@@ -44,8 +44,42 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+ int i, j, k;
+    int row_check[10] = {0};  
+    int col_check[10] = {0};  
+    int mat_check[10] = {0}; 
+    
 
-    return 1;
+    for (i = 0; i < 9; i++) {
+        memset(row_check, 0, sizeof(row_check));  
+        for (j = 0; j < 9; j++) {
+            if (n->sudo[i][j] == 0) continue;  
+            if (row_check[n->sudo[i][j]]) return 0; 
+            row_check[n->sudo[i][j]] = 1;  
+        }
+    }
+    
+    for (j = 0; j < 9; j++) {
+        memset(col_check, 0, sizeof(col_check));  
+        for (i = 0; i < 9; i++) {
+            if (n->sudo[i][j] == 0) continue;  
+            if (col_check[n->sudo[i][j]]) return 0;  
+            col_check[n->sudo[i][j]] = 1; 
+        }
+    }
+    
+    for (k = 0; k < 9; k++) {
+        memset(mat_check, 0, sizeof(mat_check));  
+        for (p = 0; p < 9; p++) {
+            int i = 3*(k/3) + (p/3);
+            int j = 3*(k%3) + (p%3);
+            if (n->sudo[i][j] == 0) continue;  
+            if (mat_check[n->sudo[i][j]]) return 0; 
+            mat_check[n->sudo[i][j]] = 1;  
+        }
+    }
+    
+    return 1;  
 }
 
 
