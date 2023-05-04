@@ -126,16 +126,17 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  int n;
   List* stack=createList();
   pushFront(stack,n);
   
-  while(!isEmpty(stack)){
+  while(!is_empty(stack)){
     Node* current=first(stack);
     popFront(stack);
     (*cont)++;
     
     if(is_final(current)){
-      clear(stack);
+      clean(stack);
       return current;
     }
     
@@ -149,7 +150,7 @@ Node* DFS(Node* initial, int* cont){
     free(adj_nodes);
   }
   
-  clear(stack);
+  clean(stack);
   return NULL;
 }
 

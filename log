@@ -228,3 +228,24 @@ sudoku.c:138:7: error: implicit declaration of function ‘clear’; did you mea
 cc1: all warnings being treated as errors
 Compilation failed
 0235bc9
+Thu 04 May 2023 11:08:55 PM UTC: 
+ sudoku.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:131:19: error: passing argument 2 of ‘pushFront’ makes pointer from integer without a cast [-Werror=int-conversion]
+  131 |   pushFront(stack,n);
+      |                   ^
+      |                   |
+      |                   int
+In file included from test.c:4:
+list.h:22:34: note: expected ‘void *’ but argument is of type ‘int’
+   22 | void pushFront(List* list, void* data);
+      |                            ~~~~~~^~~~
+In file included from test.c:5:
+sudoku.c:131:3: error: ‘n’ is used uninitialized [-Werror=uninitialized]
+  131 |   pushFront(stack,n);
+      |   ^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+74432cf
