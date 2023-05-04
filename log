@@ -2,3 +2,17 @@ Thu 04 May 2023 12:30:48 AM UTC:
  tests:  0|5
 total_score: 0/70
 d8d33d3
+Thu 04 May 2023 12:32:27 AM UTC: 
+ sudoku.c | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:62:7: error: implicit declaration of function ‘insertBack’ [-Werror=implicit-function-declaration]
+   62 |       insertBack(list,new_node);
+      |       ^~~~~~~~~~
+sudoku.c:64:11: error: returning ‘List *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Werror=int-conversion]
+   64 |    return list;
+      |           ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+828a5c6
