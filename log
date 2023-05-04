@@ -208,3 +208,23 @@ Thu 04 May 2023 02:30:54 AM UTC:
  tests:  7|1
 total_score: 55/70
 3dd285c
+Thu 04 May 2023 11:07:42 PM UTC: 
+ sudoku.c | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:130:19: error: ‘n’ undeclared (first use in this function)
+  130 |   pushFront(stack,n);
+      |                   ^
+sudoku.c:130:19: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:132:10: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  132 |   while(!isEmpty(stack)){
+      |          ^~~~~~~
+      |          is_empty
+sudoku.c:138:7: error: implicit declaration of function ‘clear’; did you mean ‘clean’? [-Werror=implicit-function-declaration]
+  138 |       clear(stack);
+      |       ^~~~~
+      |       clean
+cc1: all warnings being treated as errors
+Compilation failed
+0235bc9
