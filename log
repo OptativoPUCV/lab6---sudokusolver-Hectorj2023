@@ -112,3 +112,42 @@ Thu 04 May 2023 02:27:01 AM UTC:
  tests:  7|1
 total_score: 55/70
 f179c40
+Thu 04 May 2023 02:27:48 AM UTC: 
+ sudoku.c | 33 ++++++++++++++++++++++++++++++++-
+ 1 file changed, 32 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:130:1: error: statement with no effect [-Werror=unused-value]
+  130 | 2 / 2
+      | ^
+sudoku.c:130:6: error: expected ‘;’ before ‘Para’
+  130 | 2 / 2
+      |      ^
+      |      ;
+  131 | 
+  132 | Para implementar la búsqueda en profundidad, necesitamos una función que explore el grafo a partir del nodo inicial y que vaya generando los nodos adyacentes para explorarlos en profundidad. La idea es ir explorando cada rama del grafo hasta encontrar un nodo final o hasta agotar todas las posibilidades.
+      | ~~~~  
+test.c: In function ‘adj_test1’:
+test.c:76:17: error: ‘msg’ undeclared (first use in this function)
+   76 |         sprintf(msg, "primer nodo %d %d %d... (deberia ser 5 3 1...)",aux->sudo[0][0],aux->sudo[0][1],aux->sudo[0][2]);
+      |                 ^~~
+test.c:76:17: note: each undeclared identifier is reported only once for each function it appears in
+test.c: In function ‘test_mod_adj’:
+test.c:157:17: error: ‘msg’ undeclared (first use in this function)
+  157 |         sprintf(msg,"la lista deberia tener tamanno 3 pero tiene tamanno %d",get_size(adj));
+      |                 ^~~
+test.c: In function ‘DFS’:
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+875dd8b

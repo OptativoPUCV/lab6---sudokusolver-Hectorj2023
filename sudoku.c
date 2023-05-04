@@ -126,7 +126,38 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  return NULL;
+
+2 / 2
+
+Para implementar la búsqueda en profundidad, necesitamos una función que explore el grafo a partir del nodo inicial y que vaya generando los nodos adyacentes para explorarlos en profundidad. La idea es ir explorando cada rama del grafo hasta encontrar un nodo final o hasta agotar todas las posibilidades.
+
+Aquí está la implementación de la función DFS (Depth-First Search):
+
+c
+Copy code
+Node* DFS(Node* initial, int* cont){
+    Stack* stack = createStack(); // Creamos una pila para guardar los nodos a explorar
+    push(stack, initial); // Insertamos el nodo inicial en la pila
+    while (!isEmpty(stack)) { // Mientras la pila no esté vacía
+        Node* current = pop(stack); // Sacamos el nodo de la cima de la pila
+        if (is_final(current)) { // Si es un nodo final, lo retornamos
+            return current;
+        }
+        List* adj_nodes = get_adj_nodes(current); // Obtenemos los nodos adyacentes
+        Node* adj_node = first(adj_nodes); // Obtenemos el primer nodo adyacente
+        while (adj_node != NULL) { // Mientras haya nodos adyacentes por explorar
+            if (is_valid(adj_node)) { // Si el nodo adyacente es válido
+                push(stack, adj_node); // Lo insertamos en la pila
+            }
+            else { // Si el nodo adyacente no es válido, lo eliminamos
+                free(adj_node);
+            }
+            adj_node = next(adj_nodes); // Obtenemos el siguiente nodo adyacente
+        }
+        destroyList(adj_nodes); // Liberamos la memoria de la lista de nodos adyacentes
+        (*cont)++; // Incrementamos el contador de iteraciones
+    }
+    return NULL; // Si no se encontró un nodo final, retornamos NULL
 }
 
 
