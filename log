@@ -202,3 +202,9 @@ sudoku.c:144:9: error: implicit declaration of function ‘clearList’; did you
 cc1: all warnings being treated as errors
 Compilation failed
 be5a3a7
+Thu 04 May 2023 02:30:54 AM UTC: 
+ sudoku.c | 19 -------------------
+ 1 file changed, 19 deletions(-)
+ tests:  7|1
+total_score: 55/70
+3dd285c
