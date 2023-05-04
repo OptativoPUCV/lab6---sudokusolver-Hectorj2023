@@ -16,3 +16,9 @@ sudoku.c:64:11: error: returning ‘List *’ from a function with return type �
 cc1: all warnings being treated as errors
 Compilation failed
 828a5c6
+Thu 04 May 2023 12:32:38 AM UTC: 
+ sudoku.c | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+ tests:  0|5
+total_score: 0/70
+485cc74
